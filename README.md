@@ -23,3 +23,5 @@ updates:
 ```
 
 In this configuration file we can set the different dependencies update mechanisms, in this case we are using `gitsubmodule`. `dependabot` will check all submodules under the `directory`. You can set the frequency that `dependabot` can check for dependency updates using the [`schedule.interval` option](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#scheduleinterval). `dependabot` will gather all the updates available for our dependencies and will push them as a PR, in order to add reviewers to that PR, we can set the `reviewers` option with the usernames of the GitHub accounts.
+
+This approach will only works if the submodules are public Github repositories. But if the submodule and the repository that is using it are in the same project, you can configure `dependabot` to [allow it to update it](https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-security-and-analysis-settings-for-your-organization#allowing-dependabot-to-access-private-dependencies).
